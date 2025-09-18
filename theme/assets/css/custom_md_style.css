@@ -1,0 +1,205 @@
+:root {
+  /* COLORS */
+  --color_Y: #f080ff;
+  --color_A: #69a9f1;
+  --color_M: #7652da;
+  --color_icon: #772641;
+  --colorLight: #e6e6e6;
+  --colorGray: #c3c3c3;
+  --colorBlack: #2e2b2b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--colorBlack);
+  color: var(--colorBlack);
+  font-family: "Kalam", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.md-hero {
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.md-hero-slider {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 100%;
+}
+
+.md-hero-slider li {
+  min-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateX(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.md-hero-slider li.selected {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+  position: relative;
+}
+
+.md-hero-slider li.move-left {
+  transform: translateX(-100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.icon {
+  color: var(--color_icon);
+}
+
+/* ---------------------------------Img Effects------------------------ */
+.slide-img {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.md-hero-slider li.selected .slide-img {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.group:hover .group-hover\:scale-105 {
+  /* opacity: 0.7; */
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* ---------------------------Slide Effects------------------------------ */
+
+.slide-text {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.md-hero-slider li.selected .slide-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.md-hero-slider li.selected .slide-text:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.md-hero-slider li.selected .slide-text:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.md-hero-slider li.selected .slide-text:nth-child(3) {
+  transition-delay: 0.6s;
+}
+/* ------------------------   loader       ----------------------------------------------------------- */
+
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+}
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--color_Y);
+  animation: spin 2s linear infinite;
+  z-index: 2001;
+}
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--color_A);
+  animation: spin 3s linear infinite;
+}
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--color_M);
+  animation: spin 1.5s linear infinite;
+}
+
+#loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: var(--colorBlack);
+  z-index: 2000;
+  transform: translateX(0);
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+  transform: translateX(-100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  transform: translateX(100%);
+  transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+
+/* JavaScript Turned Off */
+.no-js #loader-wrapper {
+  display: none;
+}
+
+/* -----------------------------------------------   */
