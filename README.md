@@ -2,9 +2,16 @@
 
 YAM is a WordPress project consisting of a **custom theme** and **separate plugins**, developed to showcase modern WordPress development with React (Gutenberg), PHP, JavaScript, and Tailwind CSS.
 
-The design was initially **inspired by a template from TemplateMo**, but the entire codebase (theme and plugins) has been **rebuilt from scratch**, ensuring full flexibility and performance.
+The design was initially **inspired by a template from TemplateMo**. The original design only provided static **HTML/CSS/JavaScript** files.  
+I used the design as inspiration, but the entire project was **rebuilt from scratch** as a WordPress theme and plugin system, written in **PHP, React, and TailwindCSS**.
+
+This transformation makes the site fully dynamic, allowing the admin to manage galleries, texts, and content directly from the WordPress dashboard.
 
 ---
+
+## Live Demo
+
+You can view the live website here: [YAM Project](https://yam.mazenaldebeat.com)
 
 ## 📂 Project Structure
 
