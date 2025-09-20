@@ -39,13 +39,6 @@ You can view the live website here: [YAM Project](https://yam.mazenaldebeat.com)
 
 ---
 
-## 📖 Notes
-
-- While the visual design was inspired by a TemplateMo layout, **all code was written manually**.
-- This project demonstrates custom WordPress development with modern tools.
-
----
-
 ## 📜 License
 
 This project is licensed under the **GPL-2.0 or later** license – see the [LICENSE](LICENSE) file for details.
